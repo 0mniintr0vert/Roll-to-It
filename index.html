@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roll to It! - Rules & Themes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .pokemon-theme {
+      background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXA4a2h2b3NreGEwZzdmbHg0YW5qY2RtbnV2d2Z2bXkwcmR0MHlzMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4ilFRqgbzbx4c/giphy.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffcb05;
+    }
+
+    .theme-container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1em;
+      border-radius: 12px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 1em auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background-color: #3b4cca;
+      color: #fff;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #2a2f9c;
+    }
+
+    .rules {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body id="body">
+  <div class="theme-container">
+    <h1 id="title">Roll to It!</h1>
+    <h2 id="subtitle">Rules & Themes</h2>
+
+    <button onclick="applyPokemonTheme()">Activate Pokémon Theme</button>
+
+    <div class="rules" id="rulesText">
+      <h3>How to Play:</h3>
+      <ul>
+        <li>Roll a virtual dice to get your task.</li>
+        <li>Complete the task to earn points and keep your streak!</li>
+        <li>Each theme might come with unique visual flair!</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function applyPokemonTheme() {
+      document.body.className = 'pokemon-theme';
+      document.getElementById('title').innerText = 'Roll to It! (Pokémon Edition)';
+      document.getElementById('subtitle').innerText = 'Rules for Pokémon Theme';
+      document.getElementById('rulesText').innerHTML = `
+        <h3>How to Play:</h3>
+        <ul>
+          <li>Roll a PokéDice to summon your next mission!</li>
+          <li>Complete it to level up your buddy and earn PokéPoints.</li>
+          <li>Don't let your streak faint!</li>
+        </ul>
+      `;
+    }
+  </script>
+</body>
+</html>
