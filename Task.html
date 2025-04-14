@@ -1,78 +1,17 @@
+<!-- task.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Roll to It! - Tasks & Calendar</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-
-    nav {
-      background-color: #eaeaea;
-      padding: 10px 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      gap: 15px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .page-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .task-list, .calendar {
-      flex: 1 1 45%;
-      min-width: 300px;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .google-sheet {
-      margin-top: 20px;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-    }
-
-    h2 {
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="Task.html">📋 Tasks & Calendar</a>
-  </nav>
+  <!-- Include Navbar -->
+  <div id="navbar"></div>
 
   <h1>Task & Calendar Page</h1>
-
   <div class="page-container">
     <!-- Task list section -->
     <div class="task-list">
@@ -102,6 +41,12 @@
     </iframe>
   </div>
 
+  <script>
+    // Load the navbar content dynamically from navbar.html
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  </script>
+
 </body>
 </html>
-
